@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/sample/" method="POST" >
+        
+        {% csrf_token %}
+        <input type="text" placeholder="firstname" name="fname">
+        <input type="text" placeholder="lastname" name="lname">
+        <input type="text" placeholder="address" name ="address">
+        <div class="">
+            <label>Birthday</label>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-lg-4 multibox">
+                        <select class="form-control" name="day">
+                            <option >Day</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 multibox">
+                        <select class="form-control" name="month">
+                            <option >Month</option>
+                            <option value="01">Jan</option>
+                            <option value="02">Feb</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4 multibox">
+                        <select class="form-control" name="year">
+                            <option>Year</option>
+                            <option value="2020">2020</option>
+                            <option value="2021">2021</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio"  name="gender" class="custom-control-input" value="female">
+            <label class="custom-control-label" for="customRadioInline1">Female</label>
+        </div>
+        <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio"  name="gender" class="custom-control-input" value="male">
+            <label class="custom-control-label" for="customRadioInline2">Male</label>
+        </div>
+        <button type="submit" >click me</button>
+
+    </form>
+    <a href="/userlist/">click here</a>
+</body>
+</html>

@@ -1,0 +1,113 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+<div class="page-content" style="padding-top:40px;padding-right:10px;padding-left: 10px;">
+   
+    <div class="page-title">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-xl-4 col-lg-4 col-md-4 d-flex align-items-center justify-content-between justify-content-md-start mb-3 mb-md-0">
+                <div class="d-inline-block">
+                    <h5 class="h4 d-inline-block font-weight-400 mb-0 "> Edit Profile
+</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="/editprofile/" method="POST">
+        {% csrf_token %}
+
+    <div class="row R2">
+        
+        <div class="col-lg-5 col-md-5 col-xs-5 col-xl-5 col-xxl-5 d-sm-block d-sm-none d-md-block">
+ 
+            <div class="form-group">
+                
+                <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="First name" name="fname" value="{{profile.firstname}}">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" placeholder="Last name" name="lname" value="{{profile.lastname}}">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="Mobile Number" name="mobile" value="{{ profile.mobile }}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Email Address" name="email" value="{{ prof.username }}">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Password" name="password" value="{{ prof.password }}">
+            </div>
+            <div class="">
+                <label>Birthday</label>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-4 multibox">
+                            <select class="form-control" name="day">
+                                <option>Day</option>
+                                <script>
+                                    for(i=1;i<=31;i++){
+                                        if(i<10){
+                                            document.write("<option value='"+0+i+"'>"+i+"</option>")
+                                        }else{
+                                            document.write("<option value='"+i+"'>"+i+"</option>")
+                                        }
+                                        
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 multibox">
+                            <select class="form-control" name="month">
+                                <script>
+                                    var months=["January","February","March","April","May","June","July","August","September","October","November","December"];
+                                    for(i=0;i<12;i++){
+                                        if (i<10){
+                                            document.write("<option value='"+0+i+"'>"+months[i]+"</option>")
+                                        }else{
+                                            document.write("<option value='"+i+"'>"+months[i]+"</option>")
+                                        }
+                                        
+                                    }
+                                </script>
+                            </select>
+                        </div>
+                        <div class="col-lg-4 multibox">
+                            <select class="form-control" name="year">
+                                <option>Year</option>
+                               
+                                <script>
+                                    for(i=1983;i<=(new Date().getFullYear());i++){
+                                        document.write("<option value='"+i+"'>"+i+"</option>")
+                                    }
+                                </script> 
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline1" name="gender" class="custom-control-input" value="female">
+                <label class="custom-control-label" for="customRadioInline1">Female</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+                <input type="radio" id="customRadioInline2" name="gender" class="custom-control-input" value="male">
+                <label class="custom-control-label" for="customRadioInline2">Male</label>
+            </div> <br><br>
+
+            
+
+            <button type="submit" class="btn btn-success B2">Update</button>
+        
+        </div>
+    </div>
+</form>
+
+
+
+    </div>
+{% endblock %}

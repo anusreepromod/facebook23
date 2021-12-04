@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% load static %}
+{% block content %}
+<div class="page-content" style="padding-top:40px;padding-right:10px;padding-left: 10px;">
+<div class="col-lg-8">
+    <div class="float-left col-6">
+        <label for="document" class="float-left pt-1 form-control-label">Upload photo<span class="text-danger">*</span> </label>
+    </div>
+    <div class="float-right col-6">
+
+        <div class="choose-file form-group">
+            <label for="">
+                <input class="form-control   border-0"    name="photo" type="file" id="" data-filename="">
+            </label>     
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}

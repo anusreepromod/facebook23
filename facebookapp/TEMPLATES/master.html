@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <title>Facebook</title>
+  </head>
+  <body>
+    <div class="row">
+        <div class="col-lg-12 ">
+            <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top">
+                <a class="navbar-brand mr-0 px-3" href="#">Facebook</a>
+                <button class="navbar-toggler d-md-none collapsed" type="button" data-toggle="collapse"
+                    data-target="#sidebarmenus" aria-controls="sidebarmenus" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="sidebarmenus">
+
+                    <ul class="navbar-nav ml-auto">
+                        <form class="navbar-form">
+                            <div class="input-group no-border">
+                                <input class="form-control py-2 border-right-0 border" type="search" value="search" id="example-search-input">
+                    <span class="input-group-append">
+                      <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                            <i class="fa fa-search"></i>
+                      </button>
+                    </span>
+                            </div>
+                        </form>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="#" id="navbarDropdownProfile" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">person</i>
+                                 {{ username.firstname }}  
+                            </a>
+                            
+                        </li>
+                        
+                    </ul>
+                </div>
+
+            </nav>
+        </div>
+    </div>
+    <div class="container-fluid ">
+        <div class="row">
+            <!-- <div class="col-lg-3 col-sm-3 col-xs-3 col-12 vh-100% "> -->
+                <nav id= "sidebarmenus" class="nav navbar-light col-md-3 col-lg-2 d-md-block bg-light sidebar collapse vh-100" style="padding-top: 15px;padding-left: 10px;">
+                    <div class="wrapper d2" > 
+                        <div class="sidebar"> 
+                            <div class="sidebar-fixed" >
+                                <ul class="navbar-nav" style="height:100%; width:200px;">
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/dashboard">
+                                            <i class="material-icons">dashboard</i>
+                                            Dashboard
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/editprofile/">
+                                            <i class="material-icons">edit_note</i>
+                                            Edit profile
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/changepassword/">
+                                            <i class="material-icons">password</i>
+                                            Change Password
+                                        </a>
+                                    </li> 
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/logout/">
+                                            <i class="material-icons">logout</i>
+                                           Logout
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/delete/">
+                                            <i class="material-icons">logout</i>
+                                           Delete account
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                </nav>
+                <div class="col-lg-9" >
+                    {% block content %}
+                    {% endblock %}
+                </div>
+                </div>
+                </div>
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

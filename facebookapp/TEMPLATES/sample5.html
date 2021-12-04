@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+</head>
+<!-- <body onload="loaddata()"> -->
+    <body>
+        <input type="text" name="name" id="name">
+        <input type="text" name="contact" id="contact">
+        <input type="text" name="place" id="place">
+        <button type="submit" onclick="datasave()">submit</button>
+       
+          
+        <table align="center" border="1px" id="table">
+            <tr>
+                <th>Name</th>
+                <th>Contact</th>
+                <th>Place</th>
+            </tr>
+            
+        </table>
+        
+    <script>
+        $.ajaxSetup({
+ 	 		headers: { "X-CSRFToken": '{{csrf_token}}' }
+		});
+        function datasave(){
+          $.ajax({
+              url:'/sample2/',
+              type:'POST',
+              data: {
+                  name: $('#name').val(),
+                  contact: $('#contact').val(),
+                  place: $('#place').val()
+              },
+              success:function(response){
+                  console.log(response.msg)
+                  loaddata()
+                //   $('#name').val()
+              }
+          })
+        }
+        // load data
+        // function loaddata(){
+        //     $.ajax({
+        //         url:'/sample5/',
+        //         type: 'GET',
+        //         success: function(response){
+        //             console.log(response.datas)
+        //             // $('.tr').remove()
+        //             // for(i=0;i<response.datas.length;i++){
+        //             //  $('#table').append("<tr class='tr'><td>"+response.datas[i].name+"</td><td>"+response.datas[i].contact+"</td><td>"+response.datas[i].place+"</td><td><button onclick='deldata("+response.datas[i].id+")'>Delete</button></td></tr>")
+             
+
+        //             // }
+        //         }
+        //     })
+        // }
+    //     function deldata(id){
+    //         $.ajax({
+    //             url:'/del/',
+    //             type: 'POST',
+    //             data:{
+    //                 id:id
+    //             },
+    //             success: function(response){
+    //                 alert(response.msg)
+    //                 loaddata()
+    //             }
+    //         })
+    //     }
+    //     function fnuser(){
+    //     $.ajax({
+    //       url:'/sample2/',
+    //       type:'POST',
+    //       data: {
+    //           name: $('#name').val()
+    //       },
+    //       success:function(response){
+    //           console.log(response.msgs)
+    //           $('#name').val(" ")
+    //       }
+    //   })
+
+    // }
+    </script>
+</body>
+</html>
